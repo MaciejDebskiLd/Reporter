@@ -7,7 +7,7 @@ public class Reporter {
     public void broadcastMessage(String msg) {
         this.msg = msg;
     }
-
+  
     public String getMsg() {
         return msg;
     }

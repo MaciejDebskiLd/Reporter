@@ -7,9 +7,16 @@ import static java.lang.String.valueOf;
 public class VowelWebsite extends AbstractPortal implements Observer {
 
 
-    private String portalName = "Vowel Website";
 
 
+    public VowelWebsite() {
+        portalName = "Vowel Website";
+    }
+
+    @Override
+    public void setPortalName(String portalName) {
+        this.portalName = portalName;
+    }
 
     @Override
     public int countPoints(Reporter reporter) {

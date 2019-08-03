@@ -20,6 +20,7 @@ class ObserverTest {
         reporter1.addObserver(consonantWebsite);
         reporter1.addObserver(vowelWebsite);
 
+
         reporter1.broadcastMessage("msg 1");
 
         reporter2.addObserver(customWebsite1);

@@ -6,9 +6,15 @@ import static java.lang.String.valueOf;
 import pl.programator.observer.Observer;
 
 public class CustomWebsite extends AbstractPortal implements Observer {
-    private String portalName = "CustomWebsite";
 
 
+    public CustomWebsite() {
+        portalName = "CustomWebsite";
+    }
+
+    @Override
+    public void setPortalName(String portalName) {
+    }
 
     @Override
     public int countPoints(Reporter reporter) {

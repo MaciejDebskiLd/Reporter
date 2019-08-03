@@ -1,10 +1,10 @@
 package pl.programator.models;
 import static java.lang.String.valueOf;
-public class VowelPortal extends AbstractPortal {
+public class VowelWebsite extends AbstractPortal {
 
-    Reporter reporter;
+    private Reporter reporter;
 
-    public VowelPortal(Reporter reporter) {
+    public VowelWebsite(Reporter reporter) {
         this.reporter = reporter;
     }
 

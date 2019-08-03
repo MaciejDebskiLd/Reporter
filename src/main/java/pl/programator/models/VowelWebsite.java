@@ -19,6 +19,26 @@ public class VowelWebsite extends AbstractPortal {
             }
 
         }return result;
+    }
+
+    @Override
+    public StringBuilder capitalMsg() {
+
+        StringBuilder stringBuilder = new StringBuilder();
+        try {
+            for (int i = 0; i < reporter.getMsg().length(); i++) {
+                String nextChar = valueOf(reporter.getMsg().toLowerCase().charAt(i));
+                if (nextChar.matches("[aeiouy]")) {
+                    stringBuilder.append(nextChar.toUpperCase());
+                } else {
+                    stringBuilder.append(nextChar);
+                }
+            }
+
+            return stringBuilder;
+        } catch (NullPointerException error) {
+            return null;
+        }
 
 
     }

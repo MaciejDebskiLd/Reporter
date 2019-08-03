@@ -1,5 +1,7 @@
 package pl.programator.models;
 
+import static java.lang.String.valueOf;
+
 public class CustomWebsite extends AbstractPortal{
     private Reporter reporter;
 
@@ -20,5 +22,28 @@ public class CustomWebsite extends AbstractPortal{
             }
         }
         return points;
+    }
+
+
+    @Override
+    public StringBuilder capitalMsg() {
+
+        StringBuilder stringBuilder = new StringBuilder();
+        try {
+            for (int i = 0; i < reporter.getMsg().length(); i++) {
+                String nextChar = valueOf(reporter.getMsg().toLowerCase().charAt(i));
+                if (nextChar.matches("[a-kA-K]")) {
+                    stringBuilder.append(nextChar.toUpperCase());
+                } else {
+                    stringBuilder.append(nextChar);
+                }
+            }
+
+            return stringBuilder;
+        } catch (NullPointerException error) {
+            return null;
+        }
+
+
     }
 }

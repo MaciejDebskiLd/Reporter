@@ -2,6 +2,7 @@ package pl.programator.models;
 
 import org.testng.annotations.Test;
 
+import static java.lang.String.valueOf;
 import static org.junit.jupiter.api.Assertions.*;
 import static org.testng.Assert.assertEquals;
 
@@ -27,10 +28,30 @@ class ConsonantWebsiteTest {
         reporter3.broadcastMessage("AaB 99 ; - ą bCc");
         reporter4.broadcastMessage("lllla");
 
-
-        assertEquals(website1.countPoints(), 0);
-        assertEquals(website2.countPoints(), 0);
-        assertEquals(website3.countPoints(), 4);
-        assertEquals(website4.countPoints(), 4);
+        assertAll(
+                () -> assertEquals(website1.countPoints(), 0),
+        () ->  assertEquals(website2.countPoints(), 0),
+        () ->  assertEquals(website3.countPoints(), 4),
+        () ->  assertEquals(website4.countPoints(), 4)
+        );
     }
+
+    @org.junit.jupiter.api.Test
+    void capitalMsg() {
+
+        reporter1.broadcastMessage("");
+        reporter2.broadcastMessage(null);
+        reporter3.broadcastMessage("AaB 99 ; - ą bCc");
+        reporter4.broadcastMessage("lllla");
+
+assertAll(
+        () ->  assertEquals(valueOf(website1.capitalMsg()), ""),
+        () ->  assertNull(website2.capitalMsg()),
+        () ->  assertEquals(valueOf(website3.capitalMsg()), "aaB 99 ; - ą BCC"),
+        () ->  assertEquals(valueOf(website4.capitalMsg()), "LLLLa")
+
+        );
+    }
+
+
 }

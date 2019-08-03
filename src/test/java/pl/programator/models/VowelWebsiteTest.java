@@ -2,7 +2,9 @@ package pl.programator.models;
 
 import org.junit.jupiter.api.Test;
 
+import static java.lang.String.valueOf;
 import static org.junit.jupiter.api.Assertions.*;
+import static org.testng.Assert.assertEquals;
 
 class VowelWebsiteTest {
 
@@ -28,8 +30,22 @@ class VowelWebsiteTest {
         assertEquals(3, vowelWebsite2.countPoints());
         assertEquals(2, vowelWebsite3.countPoints());
         assertEquals(0, vowelWebsite4.countPoints());
+    }
+        @Test
+        void capitalMsg() {
 
+            reporter1.broadcastMessage("abc");
+            reporter2.broadcastMessage("aabi");
+            reporter3.broadcastMessage("AaFG");
+            reporter4.broadcastMessage("");
 
+            assertAll(
+                    () ->  assertEquals(valueOf(vowelWebsite1.capitalMsg()), "Abc"),
+                    () ->  assertEquals(valueOf(vowelWebsite2.capitalMsg()), "AAbI"),
+                    () ->  assertEquals(valueOf(vowelWebsite3.capitalMsg()), "AAfg"),
+                    () ->  assertEquals(valueOf(vowelWebsite4.capitalMsg()), "")
+
+            );
 
 
     }

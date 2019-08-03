@@ -4,13 +4,14 @@ import static java.lang.String.valueOf;
 
 public class CustomWebsite extends AbstractPortal{
     private Reporter reporter;
+import pl.programator.observer.Observer;
 
-    public CustomWebsite(Reporter reporter) {
-        this.reporter = reporter;
-    }
+public class CustomWebsite extends AbstractPortal implements Observer{
+    private String portalName = "CustomWebsite";
+
 
     @Override
-    public int countPoints() {
+    public int countPoints(Reporter reporter) {
         String msg = reporter.getMsg();
 
 
@@ -45,5 +46,9 @@ public class CustomWebsite extends AbstractPortal{
         }
 
 
+    }
+    @Override
+    public void notifyObject(String msg, String name) {
+        System.out.println(portalName + " " + name + " " + msg);
     }
 }

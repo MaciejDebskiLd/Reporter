@@ -47,11 +47,11 @@ class ConsonantWebsiteTest {
         reporter4.broadcastMessage("lllla");
 
 assertAll(
-        () ->  assertEquals(valueOf(website1.capitalMsg()), ""),
-        () ->  assertNull(website2.capitalMsg()),
-        () ->  assertEquals(valueOf(website3.capitalMsg()), "aaB 99 ; - ą BCC"),
-        () ->  assertEquals(valueOf(website4.capitalMsg()), "LLLLa")
-
+        () ->  assertEquals(valueOf(website1.capitalMsg(reporter1)), ""),
+        () ->  assertNull(website2.capitalMsg(reporter2)),
+        () ->  assertEquals(valueOf(website3.capitalMsg(reporter3)), "aaB 99 ; - ą BCC"),
+        () ->  assertEquals(valueOf(website4.capitalMsg(reporter4)), "LLLLa")
+);
         assertEquals(website1.countPoints(reporter1), 0);
         assertEquals(website2.countPoints(reporter2), 0);
         assertEquals(website3.countPoints(reporter3), 4);

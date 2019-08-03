@@ -32,23 +32,23 @@ class CustomWebsiteTest {
 
         @Test
         void capitalMsg() {
-            Reporter reporter1 = new Reporter();
-            Reporter reporter2 = new Reporter();
-            Reporter reporter3 = new Reporter();
-            Reporter reporter4 = new Reporter();
+            Reporter reporter1 = new Reporter("Adam1");
+            Reporter reporter2 = new Reporter("Adam2");
+            Reporter reporter3 = new Reporter("Adam3");
+            Reporter reporter4 = new Reporter("Adam4");
             reporter1.broadcastMessage("");
             reporter2.broadcastMessage(null);
             reporter3.broadcastMessage("AaB 99 ; - ą bCc");
             reporter4.broadcastMessage("lllla");
-            CustomWebsite customWebsite1 = new CustomWebsite(reporter1);
-            CustomWebsite customWebsite2 = new CustomWebsite(reporter2);
-            CustomWebsite customWebsite3 = new CustomWebsite(reporter3);
-            CustomWebsite customWebsite4 = new CustomWebsite(reporter4);
+            CustomWebsite customWebsite1 = new CustomWebsite();
+            CustomWebsite customWebsite2 = new CustomWebsite();
+            CustomWebsite customWebsite3 = new CustomWebsite();
+            CustomWebsite customWebsite4 = new CustomWebsite();
             assertAll(
-                    () ->  assertEquals(valueOf(customWebsite1.capitalMsg()), ""),
-                    () ->  assertNull(customWebsite2.capitalMsg()),
-                    () ->  assertEquals(valueOf(customWebsite3.capitalMsg()), "AAB 99 ; - ą BCC"),
-                    () ->  assertEquals(valueOf(customWebsite4.capitalMsg()), "llllA")
+                    () ->  assertEquals(valueOf(customWebsite1.capitalMsg(reporter1)), ""),
+                    () ->  assertNull(customWebsite2.capitalMsg(reporter2)),
+                    () ->  assertEquals(valueOf(customWebsite3.capitalMsg(reporter3)), "AAB 99 ; - ą BCC"),
+                    () ->  assertEquals(valueOf(customWebsite4.capitalMsg(reporter4)), "llllA")
 
             );
     }

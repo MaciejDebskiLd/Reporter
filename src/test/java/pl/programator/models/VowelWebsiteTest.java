@@ -37,10 +37,10 @@ class VowelWebsiteTest {
             reporter4.broadcastMessage("");
 
             assertAll(
-                    () ->  assertEquals(valueOf(vowelWebsite1.capitalMsg()), "Abc"),
-                    () ->  assertEquals(valueOf(vowelWebsite2.capitalMsg()), "AAbI"),
-                    () ->  assertEquals(valueOf(vowelWebsite3.capitalMsg()), "AAfg"),
-                    () ->  assertEquals(valueOf(vowelWebsite4.capitalMsg()), "")
+                    () ->  assertEquals(valueOf(vowelWebsite1.capitalMsg(reporter1)), "Abc"),
+                    () ->  assertEquals(valueOf(vowelWebsite2.capitalMsg(reporter2)), "AAbI"),
+                    () ->  assertEquals(valueOf(vowelWebsite3.capitalMsg(reporter3)), "AAfg"),
+                    () ->  assertEquals(valueOf(vowelWebsite4.capitalMsg(reporter4)), "")
 
             );
 

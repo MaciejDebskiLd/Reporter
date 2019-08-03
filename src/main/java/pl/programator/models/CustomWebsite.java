@@ -2,32 +2,39 @@ package pl.programator.models;
 
 import static java.lang.String.valueOf;
 
-public class CustomWebsite extends AbstractPortal{
-    private Reporter reporter;
+
 import pl.programator.observer.Observer;
 
-public class CustomWebsite extends AbstractPortal implements Observer{
+public class CustomWebsite extends AbstractPortal implements Observer {
     private String portalName = "CustomWebsite";
+
 
 
     @Override
     public int countPoints(Reporter reporter) {
-        String msg = reporter.getMsg();
 
 
-        int points = 0;
-        for (int i = 0; i < msg.length(); i++){
-            String letter = String.valueOf(msg.charAt(i));
-            if (letter.matches("[a-kA-K]")){
-                points += 1;
-            }
+
+    String msg = reporter.getMsg();
+
+
+    int points = 0;
+
+        for(
+    int i = 0; i<msg.length();i++)
+
+    {
+        String letter = String.valueOf(msg.charAt(i));
+        if (letter.matches("[a-kA-K]")) {
+            points += 1;
         }
-        return points;
     }
+        return points;
+}
 
 
     @Override
-    public StringBuilder capitalMsg() {
+    public StringBuilder capitalMsg(Reporter reporter) {
 
         StringBuilder stringBuilder = new StringBuilder();
         try {
@@ -47,6 +54,7 @@ public class CustomWebsite extends AbstractPortal implements Observer{
 
 
     }
+
     @Override
     public void notifyObject(String msg, String name) {
         System.out.println(portalName + " " + name + " " + msg);

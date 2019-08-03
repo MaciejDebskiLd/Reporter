@@ -1,15 +1,18 @@
 package pl.programator.models;
+
+import pl.programator.observer.Observer;
+
 import static java.lang.String.valueOf;
-public class VowelWebsite extends AbstractPortal {
 
-    private Reporter reporter;
+public class VowelWebsite extends AbstractPortal implements Observer {
 
-    public VowelWebsite(Reporter reporter) {
-        this.reporter = reporter;
-    }
+
+    private String portalName = "Vowel Website";
+
+
 
     @Override
-    public int countPoints() {
+    public int countPoints(Reporter reporter) {
 
         int result = 0;
         for (int i = 0; i < reporter.getMsg().length(); i++) {
@@ -18,11 +21,12 @@ public class VowelWebsite extends AbstractPortal {
                 result += 1;
             }
 
-        }return result;
+        }
+        return result;
     }
 
     @Override
-    public StringBuilder capitalMsg() {
+    public StringBuilder capitalMsg(Reporter reporter) {
 
         StringBuilder stringBuilder = new StringBuilder();
         try {
@@ -40,6 +44,12 @@ public class VowelWebsite extends AbstractPortal {
             return null;
         }
 
+
+    }
+
+    @Override
+    public void notifyObject(String msg, String name) {
+        System.out.println(portalName + " " + name + " " + msg);
 
     }
 }

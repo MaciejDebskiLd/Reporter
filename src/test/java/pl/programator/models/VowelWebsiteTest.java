@@ -30,7 +30,9 @@ class VowelWebsiteTest {
         assertEquals(3, vowelWebsite2.countPoints(reporter2));
         assertEquals(2, vowelWebsite3.countPoints(reporter3));
         assertEquals(0, vowelWebsite4.countPoints(reporter4));
-
+    }
+        @Test
+        void capitalMsg(){
             reporter1.broadcastMessage("abc");
             reporter2.broadcastMessage("aabi");
             reporter3.broadcastMessage("AaFG");

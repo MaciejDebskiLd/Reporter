@@ -52,9 +52,6 @@ assertAll(
         () ->  assertEquals(valueOf(website3.capitalMsg(reporter3)), "aaB 99 ; - ą BCC"),
         () ->  assertEquals(valueOf(website4.capitalMsg(reporter4)), "LLLLa")
 );
-        assertEquals(website1.countPoints(reporter1), 0);
-        assertEquals(website2.countPoints(reporter2), 0);
-        assertEquals(website3.countPoints(reporter3), 4);
-        assertEquals(website4.countPoints(reporter4), 4);
+
     }
 }

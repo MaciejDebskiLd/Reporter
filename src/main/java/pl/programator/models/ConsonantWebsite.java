@@ -1,29 +1,58 @@
 package pl.programator.models;
 
+import pl.programator.observer.Observer;
+
 import java.util.ArrayList;
 
 import static java.lang.String.valueOf;
 
-public class ConsonantWebsite extends AbstractPortal {
+public class ConsonantWebsite extends AbstractPortal implements Observer {
+    private String portalName = "ConsonantWebsite";
 
-    private Reporter reporter;
 
-    public ConsonantWebsite(Reporter reporter) {
-        this.reporter = reporter;
+    @Override
+    public int countPoints(Reporter reporter) {
+
+        int result = 0;
+        try {
+            for (int i = 0; i < reporter.getMsg().length(); i++) {
+                String nextChar = valueOf(reporter.getMsg().toLowerCase().charAt(i));
+                if (nextChar.matches("[b-df-gj-np-tv-xz]")) {
+                    result += 1;
+                }
+            }
+            return result;
+        } catch (NullPointerException error) {
+            return 0;
+        }
     }
 
     @Override
-    public int countPoints() {
+    public StringBuilder capitalMsg(Reporter reporter) {
 
-        int result = 0;
-        try{
-        for (int i = 0; i < reporter.getMsg().length(); i++) {
-            String nextChar = valueOf(reporter.getMsg().toLowerCase().charAt(i));
-            if (nextChar.matches("[b-df-gj-np-tv-xz]")) {
-                result += 1;
+        StringBuilder stringBuilder = new StringBuilder();
+        try {
+            for (int i = 0; i < reporter.getMsg().length(); i++) {
+                String nextChar = valueOf(reporter.getMsg().toLowerCase().charAt(i));
+                if (nextChar.matches("[b-df-gj-np-tv-xz]")) {
+                    stringBuilder.append(nextChar.toUpperCase());
+                } else {
+                    stringBuilder.append(nextChar);
+                }
+
             }
+
+            return stringBuilder;
+        } catch (NullPointerException error) {
+            return null;
         }
-        return result;}
-        catch(NullPointerException error){return 0;}
+
+
+    }
+
+
+    @Override
+    public void notifyObject(String msg, String name) {
+        System.out.println(portalName + " " + name + " " + msg);
     }
 }

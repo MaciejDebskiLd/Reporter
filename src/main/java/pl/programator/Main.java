@@ -1,5 +1,7 @@
 package pl.programator;
 
+import pl.programator.models.AbstractPortal;
+import pl.programator.models.ConsonantWebsite;
 import pl.programator.models.Reporter;
 
 public class Main {
@@ -9,9 +11,9 @@ public class Main {
 
         reporter1.broadcastMessage("szfsafsdf");
 
-        Portal1 poret = new Portal1(reporter1);
+        ConsonantWebsite portal = new ConsonantWebsite(reporter1);
 
-        poret.coutPoints();
+        portal.countPoints();
 
     }
 }

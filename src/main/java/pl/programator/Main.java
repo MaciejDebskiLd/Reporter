@@ -1,17 +1,18 @@
 package pl.programator;
 
 import pl.programator.models.Reporter;
+import pl.programator.models.VowelPortal;
 
 public class Main {
 
     public static void main(String[] args) {
         Reporter reporter1 = new Reporter();
 
-        reporter1.broadcastMessage("szfsafsdf");
+        reporter1.broadcastMessage("szfsiiafsdf");
 
-        Portal1 poret = new Portal1(reporter1);
+        VowelPortal poret = new VowelPortal(reporter1);
 
-        poret.coutPoints();
+        System.out.println(poret.countPoints());
 
     }
 }

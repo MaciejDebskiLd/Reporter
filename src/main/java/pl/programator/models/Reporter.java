@@ -27,6 +27,10 @@ public class Reporter {
 
     private ArrayList<Observer>  observers = new ArrayList<>();
 
+    public ArrayList<Observer> getObservers() {
+        return observers;
+    }
+
     public void addObserver(Observer observer){
         if (observer != null){
             observers.add(observer);

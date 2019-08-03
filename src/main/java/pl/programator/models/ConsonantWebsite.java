@@ -1,19 +1,16 @@
 package pl.programator.models;
 
+import pl.programator.observer.Observer;
+
 import java.util.ArrayList;
 
 import static java.lang.String.valueOf;
 
-public class ConsonantWebsite extends AbstractPortal {
-
-    private Reporter reporter;
-
-    public ConsonantWebsite(Reporter reporter) {
-        this.reporter = reporter;
-    }
+public class ConsonantWebsite extends AbstractPortal implements Observer {
+    private String portalName = "ConsonantWebsite";
 
     @Override
-    public int countPoints() {
+    public int countPoints(Reporter reporter) {
 
         int result = 0;
         try{
@@ -25,5 +22,15 @@ public class ConsonantWebsite extends AbstractPortal {
         }
         return result;}
         catch(NullPointerException error){return 0;}
+    }
+
+    @Override
+    public StringBuilder capitalMsg() {
+        return null;
+    }
+
+    @Override
+    public void notifyObject(String msg, String name) {
+        System.out.println(portalName + " " + name + " " + msg);
     }
 }

@@ -21,6 +21,11 @@ public class VowelWebsite extends AbstractPortal implements Observer {
     }
 
     @Override
+    public StringBuilder capitalMsg() {
+        return null;
+    }
+
+    @Override
     public void notifyObject(String msg, String name) {
         System.out.println(portalName + " " + name + " " + msg);
     }

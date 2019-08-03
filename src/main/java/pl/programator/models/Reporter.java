@@ -2,9 +2,9 @@ package pl.programator.models;
 
 public class Reporter {
 
-    private String msg;
+    protected String msg;
 
-    public void broadcastMessage(String msg){
+    public void broadcastMessage(String msg) {
         this.msg = msg;
     }
 

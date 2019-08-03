@@ -5,15 +5,24 @@ import pl.programator.observer.Observer;
 import java.util.ArrayList;
 
 public class Reporter {
+    private String msg;
+    private String name;
 
-    protected String msg;
+    public Reporter(String name) {
+        this.name = name;
+    }
 
     public void broadcastMessage(String msg) {
         this.msg = msg;
+        notifyAllObject(msg);
     }
 
     public String getMsg() {
         return msg;
+    }
+
+    public String getName() {
+        return name;
     }
 
     private ArrayList<Observer>  observers = new ArrayList<>();
@@ -30,10 +39,10 @@ public class Reporter {
         }
     }
 
-    public void notifyAllObject(){
+    public void notifyAllObject(String msg){
         for (Observer observer : observers){
             if (observer instanceof Observer){
-                observer.notifyObject();
+                observer.notifyObject(msg, name);
             }
         }
     }

@@ -7,16 +7,16 @@ import static org.testng.Assert.assertEquals;
 
 class ConsonantWebsiteTest {
 
-   private Reporter reporter1 = new Reporter();
-    private Reporter reporter2 = new Reporter();
-    private  Reporter reporter3 = new Reporter();
-    private  Reporter reporter4 = new Reporter();
+    private Reporter reporter1 = new Reporter("Patryk");
+    private Reporter reporter2 = new Reporter("Maciej");
+    private  Reporter reporter3 = new Reporter("Marcin");
+    private  Reporter reporter4 = new Reporter("Michał");
 
 
-    private   ConsonantWebsite website1 = new ConsonantWebsite(reporter1);
-    private   ConsonantWebsite website2 = new ConsonantWebsite(reporter2);
-    private   ConsonantWebsite website3 = new ConsonantWebsite(reporter3);
-    private    ConsonantWebsite website4 = new ConsonantWebsite(reporter4);
+    private   ConsonantWebsite website1 = new ConsonantWebsite();
+    private   ConsonantWebsite website2 = new ConsonantWebsite();
+    private   ConsonantWebsite website3 = new ConsonantWebsite();
+    private    ConsonantWebsite website4 = new ConsonantWebsite();
 
 
 
@@ -30,9 +30,9 @@ class ConsonantWebsiteTest {
         reporter4.broadcastMessage("lllla");
 
 
-        assertEquals(website1.countPoints(), 0);
-        assertEquals(website2.countPoints(), 0);
-        assertEquals(website3.countPoints(), 4);
-        assertEquals(website4.countPoints(), 4);
+        assertEquals(website1.countPoints(reporter1), 0);
+        assertEquals(website2.countPoints(reporter2), 0);
+        assertEquals(website3.countPoints(reporter3), 4);
+        assertEquals(website4.countPoints(reporter4), 4);
     }
 }

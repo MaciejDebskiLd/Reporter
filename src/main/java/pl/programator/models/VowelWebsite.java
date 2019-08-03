@@ -1,27 +1,23 @@
 package pl.programator.models;
-
 import pl.programator.observer.Observer;
 
-import java.util.ArrayList;
-
 import static java.lang.String.valueOf;
-
-public class ConsonantWebsite extends AbstractPortal implements Observer {
-    private String portalName = "ConsonantWebsite";
+public class VowelWebsite extends AbstractPortal implements Observer {
+    private String portalName = "VowelWebsite";
 
     @Override
     public int countPoints(Reporter reporter) {
 
         int result = 0;
-        try{
         for (int i = 0; i < reporter.getMsg().length(); i++) {
             String nextChar = valueOf(reporter.getMsg().toLowerCase().charAt(i));
-            if (nextChar.matches("[b-df-gj-np-tv-xz]")) {
+            if (nextChar.matches("[aeiouy]")) {
                 result += 1;
             }
-        }
-        return result;}
-        catch(NullPointerException error){return 0;}
+
+        }return result;
+
+
     }
 
     @Override
@@ -29,3 +25,4 @@ public class ConsonantWebsite extends AbstractPortal implements Observer {
         System.out.println(portalName + " " + name + " " + msg);
     }
 }
+

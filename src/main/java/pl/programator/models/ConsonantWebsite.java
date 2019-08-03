@@ -16,13 +16,14 @@ public class ConsonantWebsite extends AbstractPortal {
     public int countPoints() {
 
         int result = 0;
-
+        try{
         for (int i = 0; i < reporter.getMsg().length(); i++) {
             String nextChar = valueOf(reporter.getMsg().toLowerCase().charAt(i));
             if (nextChar.matches("[b-df-gj-np-tv-xz]")) {
                 result += 1;
             }
         }
-        return result;
+        return result;}
+        catch(NullPointerException error){return 0;}
     }
 }

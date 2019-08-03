@@ -5,7 +5,6 @@ import pl.programator.observer.Observer;
 import java.util.ArrayList;
 
 public class Reporter {
-    private String msg;
     private String name;
 
     public Reporter(String name) {
@@ -16,7 +15,7 @@ public class Reporter {
         this.msg = msg;
         notifyAllObject(msg);
     }
-  
+
     public String getMsg() {
         return msg;
     }

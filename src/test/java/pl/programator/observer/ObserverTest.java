@@ -27,9 +27,6 @@ class ObserverTest {
         reporter2.addObserver(vowelWebsite);
 
         reporter2.broadcastMessage("msg 2");
-
-//        reporter1.notifyAllObject();
-
     }
 
 }

@@ -6,6 +6,7 @@ import java.util.ArrayList;
 
 public class Reporter {
     private String name;
+    private String msg;
 
     public Reporter(String name) {
         this.name = name;

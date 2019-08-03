@@ -45,7 +45,5 @@ class VowelWebsiteTest {
                     () ->  assertEquals(valueOf(vowelWebsite4.capitalMsg(reporter4)), "")
 
             );
-
-
     }
 }

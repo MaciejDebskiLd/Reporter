@@ -7,14 +7,8 @@ import java.util.ArrayList;
 import static java.lang.String.valueOf;
 
 public class ConsonantWebsite extends AbstractPortal implements Observer {
-
     public ConsonantWebsite() {
         portalName = "ConsonantWebsite";
-    }
-
-    @Override
-    public void setPortalName(String portalName) {
-        this.portalName = portalName;
     }
 
     @Override
@@ -53,13 +47,10 @@ public class ConsonantWebsite extends AbstractPortal implements Observer {
         } catch (NullPointerException error) {
             return null;
         }
-
-
     }
 
 
     @Override
     public void notifyObject(String msg, String name) {
-        System.out.println(portalName + " " + name + " " + msg);
     }
 }

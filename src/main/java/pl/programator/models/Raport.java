@@ -7,18 +7,13 @@ import java.util.List;
 import java.util.Objects;
 
 public class Raport {
-
-
-    Reporter reporter;
     List<Observer> observers;
 
 
     public void printRaport(Reporter reporter) {
-        this.reporter = reporter;
         observers = reporter.getObservers();
 
         for (Observer observer : observers) {
-
             if (observer instanceof AbstractPortal) {
                 AbstractPortal abstractPortal = (AbstractPortal) observer;
                 System.out.println("(" + abstractPortal.getPortalName() + ", " + abstractPortal.countPoints(reporter) + ") informs: " + abstractPortal.capitalMsg(reporter));

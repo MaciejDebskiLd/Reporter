@@ -5,6 +5,9 @@ import pl.programator.observer.Observer;
 import static java.lang.String.valueOf;
 
 public class VowelWebsite extends AbstractPortal implements Observer {
+    private String msg;
+    private String reportername;
+
     public VowelWebsite() {
         portalName = "Vowel Website";
     }
@@ -44,6 +47,9 @@ public class VowelWebsite extends AbstractPortal implements Observer {
     }
 
     @Override
-    public void notifyObject(String msg, String name) {}
+    public void notifyObject(String msg, String name) {
+        this.msg = msg;
+        this.reportername = name;
+    }
 }
 

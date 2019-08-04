@@ -6,6 +6,9 @@ import static java.lang.String.valueOf;
 import pl.programator.observer.Observer;
 
 public class CustomWebsite extends AbstractPortal implements Observer {
+    private String msg;
+    private String reportername;
+
     public CustomWebsite() {
         portalName = "CustomWebsite";
     }
@@ -48,6 +51,8 @@ public class CustomWebsite extends AbstractPortal implements Observer {
     }
 
     @Override
-    public void notifyObject(String msg, String name) {
+    public void notifyObject(String msg, String reporterName) {
+        this.msg = msg;
+        this.reportername = reporterName;
     }
 }

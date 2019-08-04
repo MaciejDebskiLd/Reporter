@@ -7,6 +7,8 @@ import java.util.ArrayList;
 import static java.lang.String.valueOf;
 
 public class ConsonantWebsite extends AbstractPortal implements Observer {
+    private String msg;
+    private String reportername;
     public ConsonantWebsite() {
         portalName = "ConsonantWebsite";
     }
@@ -52,5 +54,7 @@ public class ConsonantWebsite extends AbstractPortal implements Observer {
 
     @Override
     public void notifyObject(String msg, String name) {
+        this.msg = msg;
+        this.reportername = name;
     }
 }

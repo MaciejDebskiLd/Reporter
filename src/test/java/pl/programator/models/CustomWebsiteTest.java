@@ -4,7 +4,6 @@ import org.junit.jupiter.api.Test;
 
 import static java.lang.String.valueOf;
 import static org.junit.jupiter.api.Assertions.*;
-import static org.testng.Assert.assertEquals;
 
 class CustomWebsiteTest {
     private Reporter reporter1 = new Reporter("Patryk");

@@ -1,10 +1,7 @@
 package pl.programator.models;
 
-import org.testng.annotations.Test;
-
 import static java.lang.String.valueOf;
 import static org.junit.jupiter.api.Assertions.*;
-import static org.testng.Assert.assertEquals;
 
 class ConsonantWebsiteTest {
 

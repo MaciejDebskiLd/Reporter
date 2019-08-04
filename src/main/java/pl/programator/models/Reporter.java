@@ -14,7 +14,7 @@ public class Reporter {
 
     public void broadcastMessage(String msg) {
         this.msg = msg;
-        notifyAllObject(msg);
+        notifyAllObject(name, msg);
     }
 
     public String getMsg() {
@@ -43,7 +43,7 @@ public class Reporter {
         }
     }
 
-    public void notifyAllObject(String msg){
+    public void notifyAllObject(String name, String msg){
         for (Observer observer : observers){
             if (observer instanceof Observer){
                 observer.notifyObject(msg, name);

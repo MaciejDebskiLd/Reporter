@@ -4,7 +4,6 @@ import org.junit.jupiter.api.Test;
 
 import static java.lang.String.valueOf;
 import static org.junit.jupiter.api.Assertions.*;
-import static org.testng.Assert.assertEquals;
 
 class VowelWebsiteTest {
 
@@ -44,7 +43,6 @@ class VowelWebsiteTest {
                 () -> assertEquals(valueOf(vowelWebsite2.capitalMsg(reporter2)), "AAbI"),
                 () -> assertEquals(valueOf(vowelWebsite3.capitalMsg(reporter3)), "AAfg"),
                 () -> assertEquals(valueOf(vowelWebsite4.capitalMsg(reporter4)), "")
-
         );
     }
 }

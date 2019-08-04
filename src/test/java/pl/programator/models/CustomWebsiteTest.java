@@ -33,19 +33,19 @@ class CustomWebsiteTest {
         );
     }
 
-        @Test
-        void capitalMsg() {
-            reporter1.broadcastMessage("");
-            reporter2.broadcastMessage(null);
-            reporter3.broadcastMessage("AaB 99 ; - ą bCc");
-            reporter4.broadcastMessage("lllla");
+    @Test
+    void capitalMsg() {
+        reporter1.broadcastMessage("");
+        reporter2.broadcastMessage(null);
+        reporter3.broadcastMessage("AaB 99 ; - ą bCc");
+        reporter4.broadcastMessage("lllla");
 
-            assertAll(
-                    () ->  assertEquals(valueOf(customWebsite1.capitalMsg(reporter1)), ""),
-                    () ->  assertNull(customWebsite2.capitalMsg(reporter2)),
-                    () ->  assertEquals(valueOf(customWebsite3.capitalMsg(reporter3)), "AAB 99 ; - ą BCC"),
-                    () ->  assertEquals(valueOf(customWebsite4.capitalMsg(reporter4)), "llllA")
+        assertAll(
+                () -> assertEquals(valueOf(customWebsite1.capitalMsg(reporter1)), ""),
+                () -> assertNull(customWebsite2.capitalMsg(reporter2)),
+                () -> assertEquals(valueOf(customWebsite3.capitalMsg(reporter3)), "AAB 99 ; - ą BCC"),
+                () -> assertEquals(valueOf(customWebsite4.capitalMsg(reporter4)), "llllA")
 
-            );
+        );
     }
 }

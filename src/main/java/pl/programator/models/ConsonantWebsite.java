@@ -18,7 +18,7 @@ public class ConsonantWebsite extends AbstractPortal implements Observer {
         try {
             for (int i = 0; i < reporter.getMsg().length(); i++) {
                 String nextChar = valueOf(reporter.getMsg().toLowerCase().charAt(i));
-                if (nextChar.matches("[b-df-hj-np-tv-xz]")) {
+                if (nextChar.matches("[b-df-hj-np-tv-x-z]")) {
                     result += 1;
                 }
             }
@@ -35,7 +35,7 @@ public class ConsonantWebsite extends AbstractPortal implements Observer {
         try {
             for (int i = 0; i < reporter.getMsg().length(); i++) {
                 String nextChar = valueOf(reporter.getMsg().toLowerCase().charAt(i));
-                if (nextChar.matches("[b-df-hj-np-tv-xz]")) {
+                if (nextChar.matches("[b-df-hj-np-tv-x-z]")) {
                     stringBuilder.append(nextChar.toUpperCase());
                 } else {
                     stringBuilder.append(nextChar);

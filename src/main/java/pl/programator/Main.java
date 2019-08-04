@@ -20,9 +20,5 @@ public class Main {
 
         Raport raport = new Raport();
         raport.printRaport(reporter1);
-
-
-
-
     }
 }

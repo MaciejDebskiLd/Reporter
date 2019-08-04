@@ -7,14 +7,8 @@ import java.util.ArrayList;
 import static java.lang.String.valueOf;
 
 public class ConsonantWebsite extends AbstractPortal implements Observer {
-
     public ConsonantWebsite() {
         portalName = "ConsonantWebsite";
-    }
-
-    @Override
-    public void setPortalName(String portalName) {
-        this.portalName = portalName;
     }
 
     @Override
@@ -24,7 +18,7 @@ public class ConsonantWebsite extends AbstractPortal implements Observer {
         try {
             for (int i = 0; i < reporter.getMsg().length(); i++) {
                 String nextChar = valueOf(reporter.getMsg().toLowerCase().charAt(i));
-                if (nextChar.matches("[b-df-gj-np-tv-xz]")) {
+                if (nextChar.matches("[b-df-hj-np-tv-xz]")) {
                     result += 1;
                 }
             }
@@ -41,7 +35,7 @@ public class ConsonantWebsite extends AbstractPortal implements Observer {
         try {
             for (int i = 0; i < reporter.getMsg().length(); i++) {
                 String nextChar = valueOf(reporter.getMsg().toLowerCase().charAt(i));
-                if (nextChar.matches("[b-df-gj-np-tv-xz]")) {
+                if (nextChar.matches("[b-df-hj-np-tv-xz]")) {
                     stringBuilder.append(nextChar.toUpperCase());
                 } else {
                     stringBuilder.append(nextChar);
@@ -53,13 +47,10 @@ public class ConsonantWebsite extends AbstractPortal implements Observer {
         } catch (NullPointerException error) {
             return null;
         }
-
-
     }
 
 
     @Override
     public void notifyObject(String msg, String name) {
-        System.out.println(portalName + " " + name + " " + msg);
     }
 }

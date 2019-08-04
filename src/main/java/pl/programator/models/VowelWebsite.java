@@ -5,17 +5,8 @@ import pl.programator.observer.Observer;
 import static java.lang.String.valueOf;
 
 public class VowelWebsite extends AbstractPortal implements Observer {
-
-
-
-
     public VowelWebsite() {
         portalName = "Vowel Website";
-    }
-
-    @Override
-    public void setPortalName(String portalName) {
-        this.portalName = portalName;
     }
 
     @Override
@@ -50,14 +41,9 @@ public class VowelWebsite extends AbstractPortal implements Observer {
         } catch (NullPointerException error) {
             return null;
         }
-
-
     }
 
     @Override
-    public void notifyObject(String msg, String name) {
-        System.out.println(portalName + " " + name + " " + msg);
-
-    }
+    public void notifyObject(String msg, String name) {}
 }
 

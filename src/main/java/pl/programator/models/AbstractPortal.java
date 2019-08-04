@@ -9,8 +9,4 @@ public abstract class AbstractPortal {
     public String getPortalName() {
         return portalName;
     }
-
-    public void setPortalName(String portalName) {
-        this.portalName = portalName;
-    }
 }
